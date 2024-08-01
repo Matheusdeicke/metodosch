@@ -1,0 +1,1058 @@
+/*-----------------------------------*\
+  MAIN
+\*-----------------------------------*/
+
+:root {
+/* CORES */
+  --violet-blue-crayola: hsla(234, 50%, 64%, 1);
+  --dark-cornflower-blue_a7: hsla(214, 88%, 27%, 0.07);
+  --white: hsla(0, 0%, 100%, 1);
+  --white_a3: hsla(0, 0%, 100%, 0.03);
+  --white_a8: hsla(0, 0%, 100%, 0.08);
+  --white_a12: hsla(0, 0%, 100%, 0.12);
+  --white_a70: hsla(0, 0%, 100%, 0.7);
+  --cultured: hsla(220, 20%, 97%, 1);
+  --lavender-web: hsla(233, 52%, 94%, 1);
+  --cadet-blue-crayola: hsla(220, 12%, 70%, 1);
+  --cadet-blue-crayola_a20: hsla(222, 23%, 71%, 0.2);
+  --charcoal: hsla(218, 22%, 26%, 1);
+  --raisin-black: hsla(216, 14%, 14%, 1);
+  --light-gray: hsla(0, 0%, 79%, 1);
+  --blue-crayola: hsla(219, 72%, 56%, 1);
+  --black-coral: hsla(220, 12%, 43%, 1);
+
+/* TIPOGRAFIA */
+
+  --ff-manrope: 'Manrope', sans-serif;
+
+  --fs-1: calc(2.7rem + 1.38vw);
+  --fs-2: calc(2.6rem + .66vw);
+  --fs-3: 2.2rem;
+  --fs-4: 1.9rem;
+  --fs-5: 1.8rem;
+  --fs-6: 1.7rem;
+  --fs-7: 1.5rem;
+  --fs-8: 1.4rem;
+  
+  --fw-700: 700;
+
+/* ESPAÇAMENTO */
+
+  --section-padding: 90px;
+
+/* BOX SHADOW */
+  --shadow-1: 0 0 20px hsla(216, 14%, 14%, 0.05);
+  --shadow-2: 0 0 0 0.05rem hsla(214, 88%, 27%, 0.08), 0 0 1.25rem hsla(216, 14%, 14%, 0.06);
+  --shadow-3: 0 0 1.25rem hsla(216, 14%, 14%, 0.04);
+
+/* BORDER RADIUS */
+
+  --radius-circle: 50%;
+  --radius-pill: 100px;
+  --radius-10: 10px;
+  --radius-8: 8px;
+  --radius-6: 6px;
+
+/* TRANSIÇÃO */
+
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease;
+  --transition-3: 0.3s ease-in-out;
+
+}
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a,
+img,
+span,
+input,
+button,
+ion-icon { display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img { height: auto; }
+
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+input { width: 100%; }
+
+button { cursor: pointer; }
+
+ion-icon { pointer-events: none; }
+
+address { font-style: normal; }
+
+html {
+  font-family: var(--ff-manrope);
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black-coral);
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+body.nav-active { overflow: hidden; }
+
+::-webkit-scrollbar { width: 10px; }
+
+::-webkit-scrollbar-track { background-color: hsl(0, 0%, 98%); }
+
+::-webkit-scrollbar-thumb { background-color: hsl(0, 0%, 80%); }
+
+::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+
+.container { padding-inline: 16px; }
+
+.social-list {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-link {
+  font-size: 2rem;
+  transition: var(--transition-1);
+}
+
+.social-link:is(:hover, :focus-visible) { transform: translateY(-3px); }
+
+.section { padding-block: var(--section-padding); }
+
+.has-bg-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  color: var(--charcoal);
+  font-weight: var(--fw-700);
+  line-height: 1.3;
+}
+
+.h1 { font-size: var(--fs-1); }
+
+.h2 { font-size: var(--fs-2); }
+
+.h3 { font-size: var(--fs-3); }
+
+.h4 { font-size: var(--fs-4); }
+
+.h5 { font-size: var(--fs-6); }
+
+.btn {
+  color: var(--white);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-700);
+  border: 2px solid var(--white);
+  max-width: max-content;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition-1);
+  will-change: transform;
+}
+
+.btn:is(:hover, :focus-visible) { transform: translateY(-4px); }
+
+.btn-primary,
+.btn-outline:is(:hover, :focus-visible) {
+  background-color: var(--white);
+  color: var(--charcoal);
+}
+
+.img-holder {
+  aspect-ratio: var(--width) / var(--height);
+  background-color: var(--light-gray);
+  overflow: hidden;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-subtitle {
+  font-size: var(--fs-7);
+  text-transform: uppercase;
+  color: var(--violet-blue-crayola);
+  font-weight: var(--fw-700);
+  margin-block-end: 16px;
+}
+
+.grid-list {
+  display: grid;
+  gap: 25px;
+}
+
+.w-100 { width: 100%; }
+
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 20px;
+  box-shadow: var(--shadow-1);
+  z-index: 4;
+}
+
+.header.active {
+  background-color: var(--white);
+  position: fixed;
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+.header .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.header.active .logo-light,
+.header .logo-dark { display: none; }
+
+.header .logo-light,
+.header.active .logo-dark { display: block; }
+
+.overlay.active {
+  display: none;
+}
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.hero {
+  padding-block-start: calc(var(--section-padding) + 70px); /* Espaçamento superior */
+  text-align: center; /* Centraliza o texto */
+  background-image: url('./assets/images/hero-bg.jpg'); /* Imagem de fundo */
+  background-size: cover; /* Garante que a imagem cubra todo o espaço disponível */
+  background-position: center; /* Centraliza a imagem de fundo */
+}
+
+.hero .container {
+  display: grid;
+  gap: 20px; /* Espaçamento entre os elementos do grid */
+}
+
+.hero-content {
+  z-index: 2; /* Garante que o texto fique sobre o vídeo */
+}
+
+.hero-title {
+  color: var(--white); /* Define a cor do título */
+  margin-bottom: 20px; /* Espaço após o título */
+  font-size: 2.5rem; /* Tamanho da fonte do título */
+}
+
+.hero-text {
+  font-size: var(--fs-5); /* Tamanho da fonte do texto */
+  color: var(--white); /* Cor do texto */
+  margin-block: 24px 36px; /* Espaçamento acima e abaixo do texto */
+}
+
+.btn-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza os botões */
+  align-items: center;
+  gap: 12px; /* Espaço entre os botões */
+}
+
+.btn-primary {
+  background-color: var(--blue); /* Cor de fundo do botão */
+  color: var(--white); /* Cor do texto do botão */
+  padding: 12px 24px; /* Padding do botão */
+  border-radius: 5px; /* Borda arredondada do botão */
+  font-size: 1.2rem; /* Tamanho da fonte do botão */
+  text-transform: uppercase; /* Texto do botão em maiúsculo */
+  transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--blue-dark); /* Cor de fundo do botão ao passar o mouse/focar */
+  color: var(--white); /* Cor do texto ao passar o mouse/focar */
+}
+
+.hero-video {
+  max-width: 560px; /* Largura máxima do vídeo */
+  width: 100%; /* Largura relativa ao espaço disponível */
+  height: auto; /* Altura automática para manter a proporção */
+  margin: 0 auto 20px; /* Centraliza horizontalmente e margem inferior */
+  position: relative; /* Posicionamento relativo para ajustes internos */
+  padding-top: 20px; /* Espaço entre o conteúdo e o vídeo */
+}
+
+iframe {
+  width: 100%; /* Largura completa dentro do seu contêiner */
+  height: 315px; /* Altura fixa, pode ajustar conforme necessário */
+  border-radius: 8px; /* Bordas arredondadas para o iframe */
+  border: none; /* Sem borda para o iframe */
+}
+
+/*-----------------------------------*\
+  #SERVIÇO
+\*-----------------------------------*/
+
+.service { text-align: center; }
+
+.service .section-title { margin-block-end: 50px; }
+
+.service-card {
+  padding: 40px;
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-6);
+}
+
+.service-card .card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--violet-blue-crayola);
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  font-size: 2.5rem;
+  border-radius: var(--radius-circle);
+  margin-inline: auto;
+}
+
+.service-card .card-icon ion-icon { --ionicon-stroke-width: 50px; }
+
+.service-card .card-title { margin-block: 16px 10px; }
+
+/* MÓDULOS */
+
+.module-section .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adapta automaticamente o número de colunas */
+  justify-content: center; /* Centraliza os itens do grid horizontalmente */
+  gap: 20px; /* Espaçamento entre os cards */
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo do card verticalmente */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* As imagens cobrem completamente o espaço sem deformar */
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+/*-----------------------------------*\
+  #SOBRE
+\*-----------------------------------*/
+
+.about .container {
+  display: grid;
+  gap: 50px;
+  text-align: center;
+}
+
+.about .section-title {
+  margin-block-end: 35px;
+}
+
+.about-banner {
+  margin: 0 auto; /* Centraliza a figura */
+}
+
+.about-image {
+  width: 350px; /* Define largura fixa */
+  height: 350px; /* Define altura fixa */
+  border-radius: 50%; /* Torna a imagem circular */
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço */
+}
+
+.about-text {
+  padding: 0 20px; /* Adiciona um pouco de padding horizontal */
+  font-size: 2rem; /* Ajuste conforme necessário */
+}
+
+
+/*-----------------------------------*\
+  #FEATURES
+\*-----------------------------------*/
+
+.feature .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.section-subtitle, .section-title {
+  text-align: center;
+  width: 100%;
+}
+
+.section-title span {
+  display: block;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dividir o espaço igualmente em duas colunas */
+  gap: 20px; /* Espaço entre as colunas */
+  width: 100%;
+}
+
+.feature-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os cartões na sua coluna respectiva */
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--light-gray);
+  border-radius: var(--radius-8);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 90%; /* Torna os cartões ligeiramente mais estreitos que o container */
+  margin: 10px 0; /* Espaço acima e abaixo de cada cartão */
+}
+
+.feature-card .card-icon, .feature-card .card-icon-block {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-card .card-icon {
+  color: green;
+}
+
+.feature-card .card-icon-block {
+  color: red;
+}
+
+.feature-card span {
+  margin-left: 10px;
+}
+
+/*-----------------------------------*\
+  #RESULTADOS
+\*-----------------------------------*/
+
+.project {
+  background-color: var(--cultured);
+  padding: 20px 0;  /* Adiciona um pouco de espaço acima e abaixo da seção */
+}
+
+.project :is(.section-subtitle, .section-title) {
+  text-align: center;
+}
+
+.project .section-title {
+  margin-block-end: 30px;  /* Espaço depois do título */
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;  /* Impede que conteúdo fora do contêiner seja mostrado */
+}
+
+.carousel {
+  display: flex;
+  white-space: nowrap;  /* Impede que os elementos se quebrem em várias linhas */
+  animation: slide 120s linear infinite;  /* Ajuste a duração conforme a necessidade */
+}
+
+.project-card {
+  width: 300px;  /* Aumente a largura para que as imagens pareçam maiores */
+  height: auto;  /* Mantém a altura automática para manter a proporção */
+  margin-right: 20px;  /* Espaçamento entre imagens */
+  flex-shrink: 0;  /* Evita que os itens sejam esmagados */
+}
+
+.project-card img {
+  width: 100%;  /* Assegura que a imagem ocupe todo o espaço do card */
+  height: auto;  /* Mantém a proporção da imagem */
+  object-fit: cover;  /* Assegura que as imagens cubram o espaço definido sem distorção */
+}
+
+@keyframes slide {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-100%);  /* Move todas as imagens da direita para a esquerda */
+  }
+}
+
+/*-----------------------------------*\
+#CARD VENDA
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #CARD VENDA
+\*-----------------------------------*/
+
+.card-precos {
+  display: block;  /* Centraliza o card no bloco */
+  max-width: 300px; /* Limita a largura máxima do card */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  background: var(--black-coral); /* Cor de fundo para maior legibilidade */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: var(--radius-8); /* Arredondamento das bordas */
+  box-shadow: 0 8px 16px var(--raisin-black_a20); /* Sombra mais marcante */
+  transition: transform 0.3s ease-in-out; /* Transição suave para hover */
+}
+
+.card-precos:hover {
+  transform: translateY(-10px); /* Efeito flutuante ao passar o mouse */
+  box-shadow: 0 10px 20px var(--raisin-black_a30); /* Sombra mais intensa no hover */
+}
+
+.card-precos img {
+  width: 50%; /* Imagem ocupa toda a largura do card */
+  height: auto; /* Altura automática para manter proporção */
+  margin: 0 auto 15px; /* Margem automática nas laterais para centralizar, e 15px abaixo */
+  display: block;
+}
+
+.card-precos ul {
+  list-style: none; /* Remove estilos de lista */
+  padding: 0; /* Remove padding */
+  margin: 0 0 20px; /* Espaço abaixo da lista */
+}
+
+.card-precos li {
+  padding: 5px 0; /* Espaçamento entre itens */
+  border-bottom: 1px solid var(--white_a12); /* Linha sutil entre itens */
+  color: var(--charcoal); /* Cor de texto */
+}
+
+.card-precos button {
+  width: 100%; /* O botão ocupa toda a largura */
+  padding: 10px 0; /* Padding vertical */
+  background-color: var(--blue-crayola); /* Cor de fundo do botão */
+  color: var(--white); /* Cor do texto */
+  font-weight: var(--fw-700); /* Peso da fonte */
+  border-radius: var(--radius-6); /* Bordas arredondadas */
+  transition: background-color 0.25s ease; /* Transição suave da cor de fundo */
+}
+
+.card-precos button:hover {
+  background-color: var(--violet-blue-crayola); /* Cor do hover */
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: red; /* Cinza para indicar o preço original não aplicado */
+  margin-right: 10px;
+}
+
+.discount-price {
+  font-weight: bold;
+  color: #4CAF50; /* Verde para destacar o preço com desconto */
+}
+
+.price {
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center; /* Centraliza o texto dos preços */
+}
+
+
+
+/*-----------------------------------*\
+  #CTA
+\*-----------------------------------*/
+
+.cta { background-color: var(--charcoal); }
+
+.cta .container {
+  padding-block: 120px 60px; /* Aumento do padding superior para mais respiro */
+  border-block-end: 1px solid var(--cadet-blue-crayola_a20);
+}
+
+.cta .section-title {
+  color: var(--white);
+  margin-block-end: 40px; /* Um pouco mais de espaço antes do botão */
+}
+
+.cta .btn {
+  background-color: var(--violet-blue-crayola);
+  color: var(--white);
+  border: none;
+  padding: 12px 20px; /* Mais padding para um botão mais chamativo */
+  font-size: 1.2rem; /* Tamanho de fonte maior para mais destaque */
+  display: inline-flex; /* Para integrar ícones facilmente */
+  align-items: center; /* Centraliza texto e ícone verticalmente */
+}
+
+.cta .btn::after {
+  content: ' ➔'; /* Adiciona uma seta como ícone depois do texto */
+  font-size: 1.4rem; /* Tamanho ligeiramente maior para o ícone */
+}
+
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+.footer {
+  background-color: var(--charcoal);
+  padding-block: 60px 100px;
+  color: var(--light-gray);
+}
+
+.footer-brand .footer-text { margin-block: 20px; }
+
+.footer .social-list { color: var(--white); }
+
+.footer-list-title {
+  color: var(--white);
+  margin-block-end: 16px;
+}
+
+.footer-link {
+  padding-block: 4px;
+  transition: var(--transition-1);
+}
+
+.footer-link:is(:hover, :focus-visible) { color: var(--violet-blue-crayola); }
+
+.input-wrapper {
+  position: relative;
+  margin-block-start: 25px;
+}
+
+.input-field {
+  background-color: var(--white_a3);
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  padding: 12px 16px;
+  border: 1px solid var(--dark-cornflower-blue_a7);
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-3);
+  outline: none;
+}
+
+.input-field::placeholder { color: inherit; }
+
+.submit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0 var(--radius-6) var(--radius-6) 0;
+  background-color: var(--violet-blue-crayola);
+  color: var(--white);
+  padding-inline: 24px;
+  font-weight: var(--fw-700);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/**
+ * responsivo para telas maiores que 575px
+ */
+
+@media (min-width: 575px) {
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  /**
+   * PROJECTS
+   */
+
+  .project-card .card-content { padding: 40px; }
+
+}
+
+/**
+ * responsivo para telas maiores que 768px
+ */
+
+@media (min-width: 768px) {
+
+  /**
+   * CUSTOM PROPERTY
+   */
+
+  :root {
+
+    /**
+     * spacing
+     */
+
+    --section-padding: 120px;
+
+  }
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container { max-width: 720px; }
+
+  .grid-list { grid-template-columns: 1fr 1fr; }
+
+  /**
+   * HEADER
+   */
+
+  .header .btn {
+    display: block;
+    margin-inline-start: auto;
+    padding: 8px 20px;
+  }
+
+  .header.active .btn {
+    background-color: var(--violet-blue-crayola);
+    border-color: var(--violet-blue-crayola);
+    color: var(--white);
+  }
+
+  /**
+   * HERO
+   */
+
+  .hero-content {
+    max-width: 85%;
+    margin-inline: auto;
+  }
+
+  .hero-text { --fs-5: 2rem; }
+
+  /**
+   * SERVICE
+   */
+
+  .service .section-title {
+    max-width: 30ch;
+    margin-inline: auto;
+  }
+
+  /**
+   * ABOUT
+   */
+
+  .about .container {
+    grid-template-columns: 1fr 0.7fr;
+    align-items: center;
+  }
+
+  /**
+   * FEATURE
+   */
+
+  .feature .container {
+    grid-template-columns: 0.7fr 1fr;
+    align-items: center;
+  }
+
+  .feature-banner { order: 1; }
+
+}
+
+/**
+ * responsivo para telas maiores que 992px
+ */
+
+@media (min-width: 992px) {
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container { max-width: 960px; }
+
+
+
+  /**
+   * HEADER
+   */
+
+  .nav-open-btn,
+  .navbar > *:not(.navbar-list),
+  .overlay { display: none; }
+
+  .navbar,
+  .navbar.active {
+    all: unset;
+    display: block;
+    margin-inline: auto 24px;
+  }
+
+  .navbar-list {
+    display: flex;
+    gap: 30px;
+  }
+
+  .navbar-link {
+    color: var(--white);
+    transition: var(--transition-1);
+  }
+
+  .navbar-link:is(:hover, :focus-visible) { opacity: 0.7; }
+
+  .header.active .navbar-link { color: var(--charcoal); }
+
+  .header.active .navbar-link:is(:hover, :focus-visible) {
+    opacity: 1;
+    color: var(--violet-blue-crayola);
+  }
+
+  .header .btn { margin-inline-start: 0; }
+
+  /**
+   * HERO
+   */
+
+  .hero {
+    padding-block-start: calc(var(--section-padding) + 50px);
+    text-align: left;
+  }
+
+  .hero .container {
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+  }
+
+  .hero-content {
+    max-width: unset;
+    margin-inline: 0;
+  }
+
+  .btn-wrapper { justify-content: flex-start; }
+
+  /**
+   * STATS
+   */
+
+  .stats-card { grid-template-columns: repeat(4, 1fr); }
+
+  /**
+   * PROJECT
+   */
+
+  .project .section-title {
+    max-width: 32ch;
+    margin-inline: auto;
+  }
+
+  /**
+   * CTA
+   */
+
+  .cta .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cta .btn { min-width: max-content; }
+
+  .cta .section-title {
+    max-width: 30ch;
+    margin-block-end: 0;
+  }
+
+
+
+  /**
+   * FOOTER
+   */
+
+  .footer .grid-list { grid-template-columns: repeat(4, 1fr); }
+
+}
+
+
+
+
+
+/**
+ * responsivo para telas maiores que 1200px
+ */
+
+@media (min-width: 1200px) {
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container { max-width: 1140px; }
+
+
+
+  /**
+   * HERO
+   */
+
+  .hero-text { padding-inline-end: 100px; }
+
+
+
+  /**
+   * SERVICE
+   */
+
+  .service .grid-list { grid-template-columns: repeat(4, 1fr); }
+
+
+
+  /**
+   * STATS
+   */
+
+  .stats .container { max-width: 70%; }
+
+  .stats-card { padding: 60px; }
+
+
+
+  /**
+   * PROJECT
+   */
+
+  .project .grid-list { grid-template-columns: repeat(3, 1fr); }
+
+
+
+  /**
+   * FOOTER
+   */
+
+  address.footer-text {
+    padding-inline-end: 100px;
+    margin-block-end: 16px;
+  }
+
+}
+
+/**
+ * responsivo para telas maiores que 1400px
+ */
+
+@media (min-width: 1400px) {
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container { max-width: 1320px; }
+
+  
+
+  /**
+   * FEATURE
+   */
+
+  .feature-list { grid-template-columns: 1fr 1fr; }
+
+}
