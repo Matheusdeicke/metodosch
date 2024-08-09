@@ -49,15 +49,15 @@
             <a href="#" class="btn btn-primary">SAIBA MAIS</a>
           </div>
         </div>
-        <!-- Espaço para o vídeo -->
-        <div class="hero-video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
+    <!-- Espaço para o vídeo -->
+    <div class="hero-video">
+      <video id="myVideo" width="560" height="315" autoplay muted controls>
+        <source src="./assets/images/VSL POSTAR.mp4" type="video/mp4">
+        Seu navegador não suporta a reprodução de vídeo.
+      </video>
+    </div>
       </div>
     </section>
-      
       <!-- SERVIÇO -->
       <section class="section service" aria-labelledby="service-label">
         <div class="container">
@@ -118,68 +118,96 @@
         </div>
       </section>
 
-      <!-- MÓDULOS DO CURSO -->
-       <section class="module-section">
-        <div class="container">
-          <h2 class="section-title">MÓDULOS QUE O CURSO OFERECE</h2>
-          <div class="grid">
-            <div class="card">
-              <img src="./assets/images/modulo1.png" alt="Módulo 1" class="module-image">
-              <div class="card-content">
-                <h3>Módulo 1</h3>
-                <p>Aprenda a vender produtos físicos com baixo investimento inicial, 
-                  de forma ágil e eficiente, sem se preocupar com a logística e sem necessidade de estoque. Aqui seu foco é atender seus clientes e aumentar seus lucros!</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./assets/images/modulo2.png" alt="Módulo 2" class="module-image">
-              <div class="card-content">
-                <h3>Módulo 2</h3>
-                <p>Aprenda a vender produtos digitais utilizando seu conhecimento ou usando 
-                  a inteligência artificial a seu favor! Com direitos de revenda, você pode personalizar produtos já prontos ou criar o seu do zero, economizando tempo e esforço.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./assets/images/modulo3.png" alt="Módulo 3" class="module-image">
-              <div class="card-content">
-                <h3>Módulo 3</h3>
-                <p>Descubra como transformar sua criatividade em lucro no TikTok. Com milhões de usuários ativos, 
-                  você tem a chance de alcançar a monezitação na plataforma apenas criando ou copiando conteúdos que estão em alta atualmente, sem a necessidade de aparecer.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./assets/images/modulo4.png" alt="Módulo 4" class="module-image">
-              <div class="card-content">
-                <h3>Módulo 4</h3>
-                <p>Ganhe dinheiro de forma simples e eficaz se afiliando a produtos físicos ou digitais. 
-                  Venda produtos de qualidade e receba comissões por cada venda realizada. Sem necessidade de criar seus próprios produtos, você pode começar a lucrar imediatamente.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./assets/images/modulo5.png" alt="Módulo 5" class="module-image">
-              <div class="card-content">
-                <h3>Método Bônus</h3>
-                <p>Esse é um método bônus e validado para quem adquirir o produto!</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./assets/images/modulo6.png" alt="Módulo 6" class="module-image">
-              <div class="card-content">
-                <h3>ADS</h3>
-                <p>Aprenda a anúnciar do jeito certo e alcançar sua primeira venda, usando o tráfego pago ou orgânico.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./assets/images/modulo7.png" alt="Módulo 7" class="module-image">
-              <div class="card-content">
-                <h3>Conteudo complementar</h3>
-                <p>Assuntos em geral que irão potencializar seus resultados no mercado digital.
-                   Diferencie-se da concorrência utilizando minhas estratégias de marketing.</p>
-              </div>
-            </div>
-          </div>
+<!-- MÓDULOS DO CURSO E BÔNUS -->
+<section class="module-section">
+  <div class="container">
+    <h2 class="section-title">MÓDULOS QUE O CURSO OFERECE</h2>
+    <div class="grid">
+      <!-- Módulos -->
+      <div class="card">
+        <img src="./assets/images/modulo1.png" alt="Módulo 1" class="module-image">
+        <div class="card-content">
+          <h3>Módulo 1</h3>
+          <p>Aprenda a vender produtos físicos com baixo investimento inicial, 
+            de forma ágil e eficiente, sem se preocupar com a logística e sem necessidade de estoque. Aqui seu foco é atender seus clientes e aumentar seus lucros!</p>
         </div>
-       </section>
+      </div>
+      <div class="card">
+        <img src="./assets/images/modulo2.png" alt="Módulo 2" class="module-image">
+        <div class="card-content">
+          <h3>Módulo 2</h3>
+          <p>Aprenda a vender produtos digitais utilizando seu conhecimento ou usando 
+            a inteligência artificial a seu favor! Com direitos de revenda, você pode personalizar produtos já prontos ou criar o seu do zero, economizando tempo e esforço.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/modulo3.png" alt="Módulo 3" class="module-image">
+        <div class="card-content">
+          <h3>Módulo 3</h3>
+          <p>Descubra como transformar sua criatividade em lucro no TikTok. Com milhões de usuários ativos, 
+            você tem a chance de alcançar a monetização na plataforma apenas criando ou copiando conteúdos que estão em alta atualmente, sem a necessidade de aparecer.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/modulo4.png" alt="Módulo 4" class="module-image">
+        <div class="card-content">
+          <h3>Módulo 4</h3>
+          <p>Ganhe dinheiro de forma simples e eficaz se afiliando a produtos físicos ou digitais. 
+            Venda produtos de qualidade e receba comissões por cada venda realizada. Sem necessidade de criar seus próprios produtos, você pode começar a lucrar imediatamente.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/modulo5.png" alt="Módulo 5" class="module-image">
+        <div class="card-content">
+          <h3>Método Bônus</h3>
+          <p>Esse é um método bônus e validado para quem adquirir o produto!</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/modulo6.png" alt="Módulo 6" class="module-image">
+        <div class="card-content">
+          <h3>ADS</h3>
+          <p>Aprenda a anunciar do jeito certo e alcançar sua primeira venda, usando o tráfego pago ou orgânico.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/modulo7.png" alt="Módulo 7" class="module-image">
+        <div class="card-content">
+          <h3>Conteúdo complementar</h3>
+          <p>Assuntos em geral que irão potencializar seus resultados no mercado digital.
+             Diferencie-se da concorrência utilizando minhas estratégias de marketing.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">BÔNUS QUE VOCÊ TERÁ AO ADQUIRIR O CURSO</h2>
+  
+    <!-- Bônus em uma linha -->
+    <div class="grid bonus-grid">
+      <div class="card">
+        <img src="./assets/images/bonus1.jpeg" alt="Bônus 1" class="module-image">
+        <div class="card-content">
+          <h3>Estratégias</h3>
+          <p>Aprenda minhas estratégias validadas para vender qualquer produto!</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/bonus2.jpeg" alt="Bônus 2" class="module-image">
+        <div class="card-content">
+          <h3>Fundamentos Básicos</h3>
+          <p>Descubra como criar perfeitamente sua copy e seu criativo para seu produto, além de entender seu funil de vendas.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/bonus3.jpeg" alt="Bônus 3" class="module-image">
+        <div class="card-content">
+          <h3>Mentoria Individual</h3>
+          <p>Você nunca irá ficar com dúvidas tendo suporte comigo! Além de uma aula particular por semana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       <!-- 
         - SOBRE
       -->
@@ -328,37 +356,6 @@
             </div>
         </div>
     </section>
-    <!--
-    - BONUS AO COMPRAR
-    -->
-    <section class="module-section">
-      <div class="container">
-        <h2 class="section-title">BÔNUS QUE VOCÊ TERÁ AO ADQUIRIR O CURSO</h2>
-        <div class="grid">
-          <div class="card">
-            <img src="./assets/images/bonus1.jpeg" alt="Bonus 1" class="module-image">
-            <div class="card-content">
-              <h3>Estratégias</h3>
-              <p>Aprenda minhas estratégias validadas para vender qualquer produto!</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./assets/images/bonus2.jpeg" alt="Bonus 2" class="module-image">
-            <div class="card-content">
-              <h3>Fundamentos Básicos</h3>
-              <p>Descubra como criar perfeitamente sua copy e seu criativo para seu produto, além de entender seu funil de vendas.</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./assets/images/bonus3.jpeg" alt="Bonus 3" class="module-image">
-            <div class="card-content">
-              <h3>Mentoria Individual</h3>
-              <p>Você nunca irá ficar com dúvidas tendo suporte comigo! Além de uma aula particular por semana.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- CARD PREÇO-->
     <section class="card-section">
       <div class="card-precos">
@@ -444,5 +441,11 @@
   <!-- IONICON -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      var video = document.getElementById('myVideo');
+      video.play();
+    });
+  </script>
 </body>
 </html>

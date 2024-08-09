@@ -367,7 +367,7 @@ iframe {
 
 .service-card .card-title { margin-block: 16px 10px; }
 
-/* MÓDULOS */
+/* MÓDULOS E BÔNUS */
 
 .module-section .container {
   max-width: 1200px;
@@ -380,12 +380,27 @@ iframe {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adapta automaticamente o número de colunas */
   justify-content: center; /* Centraliza os itens do grid horizontalmente */
   gap: 20px; /* Espaçamento entre os cards */
+  margin-bottom: 50px; /* Espaçamento abaixo dos módulos */
+}
+
+.bonus-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Espaçamento entre os bônus */
+  margin-top: 30px; /* Espaçamento acima dos bônus */
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px; /* Espaçamento acima do título dos bônus */
+  margin-bottom: 30px; /* Espaçamento abaixo do título dos bônus */
 }
 
 .card {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: flex;
   flex-direction: column; /* Organiza o conteúdo do card verticalmente */
@@ -404,9 +419,10 @@ iframe {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
 
 
 /*-----------------------------------*\

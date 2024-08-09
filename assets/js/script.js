@@ -148,3 +148,5 @@ document.addEventListener("DOMContentLoaded", function() {
   const images = carousel.innerHTML; // Armazena as imagens originais
   carousel.innerHTML += images; // Duplica as imagens para um efeito contínuo
 });
+
+
