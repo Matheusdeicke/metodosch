@@ -381,67 +381,59 @@ iframe {
 .service-card .card-title { margin-block: 16px 10px; }
 
 /* MÓDULOS E BÔNUS */
-.module-section .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
 
-.carousel-wrapper {
-  display: flex;
-  align-items: center;
+/* Wrapper do carousel que esconde o conteúdo que está fora da área visível */
+.carousel-wrapper-curso {
   position: relative;
-  overflow: hidden; /* Esconde o conteúdo que ultrapassa o container */
+  overflow: hidden;
+  width: 100%;
 }
 
-.carousel {
+/* Configura o carousel para exibir múltiplos cards */
+.carousel-curso {
   display: flex;
-  transform: translateX(0); /* Garantir que comece no início */
-  transition: transform 0.3s ease-in-out; /* Suaviza a transição do movimento */
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
 }
 
-.card {
-  min-width: 300px; /* Ajusta a largura mínima dos cards */
-  max-width: 300px; /* Limita a largura máxima dos cards */
-  margin: 0 10px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+/* Define a largura de cada card para mostrar múltiplos cards por vez */
+.card__content-curso {
+  flex: 0 0 calc(33.33% - 20px); /* Cada card ocupa cerca de 1/3 da largura do container, subtraindo a margem */
+  margin: 0 10px;                /* Margem lateral para espaçamento entre os cards */
+  box-sizing: border-box;         /* Inclui padding e bordas dentro da largura total do card */
 }
 
-.card img {
-  width: 100%; /* Ajusta a largura da imagem para preencher o card */
-  height: auto; /* Mantém a proporção da imagem */
-  object-fit: cover; /* Garante que a imagem cubra o card sem deformar */
-  border-bottom: 2px solid #ddd; /* Adiciona uma borda inferior para separação */
+/* Ajusta o primeiro e o último card para evitar margens extras */
+.carousel-curso .card__content-curso:first-child {
+  margin-left: 0;
 }
 
-.card-content {
-  padding: 15px;
-  text-align: center;
+.carousel-curso .card__content-curso:last-child {
+  margin-right: 0;
 }
 
-.prev-btn, .next-btn {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
+/* Botões de navegação */
+.prev-btn-curso, .next-btn-curso {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10; /* Garante que os botões estejam acima do carrossel */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
 }
 
-.prev-btn {
-  left: 10px; /* Ajusta o posicionamento do botão esquerdo */
+.prev-btn-curso {
+  left: 10px;
 }
 
-.next-btn {
-  right: 10px; /* Ajusta o posicionamento do botão direito */
+.next-btn-curso {
+  right: 10px;
 }
+
+
 
 
 

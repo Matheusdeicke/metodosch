@@ -1,7 +1,4 @@
 'use strict';
-
-
-
 /**
  * add event listener on multiple elements
  */
@@ -30,7 +27,6 @@ const toggleNavbar = function () {
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
 
-
 /**
  * HEADER
  * active header when window scroll down to 100px
@@ -45,6 +41,32 @@ window.addEventListener("scroll", function () {
     header.classList.remove("active");
   }
 });
+
+
+const prevBtnCurso = document.querySelector('.prev-btn-curso');
+const nextBtnCurso = document.querySelector('.next-btn-curso');
+const carouselCurso = document.querySelector('.carousel-curso');
+
+let currentIndexCurso = 0;
+
+prevBtnCurso.addEventListener('click', () => {
+  if (currentIndexCurso > 0) {
+    currentIndexCurso--;
+    updateCarouselCurso();
+  }
+});
+
+nextBtnCurso.addEventListener('click', () => {
+  if (currentIndexCurso < carouselCurso.children.length - 1) {
+    currentIndexCurso++;
+    updateCarouselCurso();
+  }
+});
+
+function updateCarouselCurso() {
+  const cardWidth = carouselCurso.children[0].offsetWidth;
+  carouselCurso.style.transform = `translateX(-${currentIndexCurso * cardWidth}px)`;
+}
 
 
 
