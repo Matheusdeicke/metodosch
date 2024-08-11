@@ -43,6 +43,8 @@ window.addEventListener("scroll", function () {
 });
 
 
+// MÓDULOS E BONUS
+
 const prevBtnCurso = document.querySelector('.prev-btn-curso');
 const nextBtnCurso = document.querySelector('.next-btn-curso');
 const carouselCurso = document.querySelector('.carousel-curso');
@@ -57,16 +59,20 @@ prevBtnCurso.addEventListener('click', () => {
 });
 
 nextBtnCurso.addEventListener('click', () => {
-  if (currentIndexCurso < carouselCurso.children.length - 1) {
+  const maxIndex = carouselCurso.children.length - 3; // Atualize o número 3 se o número de itens visíveis mudar
+  if (currentIndexCurso < maxIndex) {
     currentIndexCurso++;
     updateCarouselCurso();
   }
 });
 
 function updateCarouselCurso() {
-  const cardWidth = carouselCurso.children[0].offsetWidth;
+  const cardWidth = carouselCurso.children[0].offsetWidth + 20; // Inclui a margem lateral total (10px + 10px)
   carouselCurso.style.transform = `translateX(-${currentIndexCurso * cardWidth}px)`;
 }
+
+
+
 
 
 
