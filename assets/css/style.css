@@ -268,6 +268,14 @@ body.nav-active { overflow: hidden; }
   #HERO
 \*-----------------------------------*/
 
+.highlight {
+  display: inline; /* Garante que o span seja tratado como texto contínuo */
+  color: var(--highlight-color); /* Cor de destaque */
+  font-weight: bold; /* (Opcional) Negrito para destaque */
+  margin: 0; /* Remove possíveis margens */
+  padding: 0; /* Remove possíveis espaçamentos internos */
+}
+
 .hero {
   padding-block-start: calc(var(--section-padding) + 70px); /* Espaçamento superior */
   text-align: center; /* Centraliza o texto */
@@ -279,6 +287,8 @@ body.nav-active { overflow: hidden; }
 .hero .container {
   display: grid;
   gap: 20px; /* Espaçamento entre os elementos do grid */
+  margin: 0 auto; /* Centraliza o container na página */
+  padding: 0 20px; /* Espaçamento interno do container */
 }
 
 .hero-content {
@@ -288,13 +298,15 @@ body.nav-active { overflow: hidden; }
 .hero-title {
   color: var(--white); /* Define a cor do título */
   margin-bottom: 20px; /* Espaço após o título */
-  font-size: 2.5rem; /* Tamanho da fonte do título */
+  font-size: 4.0rem; /* Tamanho da fonte do título */
 }
 
 .hero-text {
-  font-size: var(--fs-5); /* Tamanho da fonte do texto */
+  font-size: 1.8rem; /* Tamanho da fonte do texto */
   color: var(--white); /* Cor do texto */
   margin-block: 24px 36px; /* Espaçamento acima e abaixo do texto */
+  line-height: 1.5; /* Espaçamento entre as linhas */
+  white-space: normal; /* Permite quebras de linha automáticas */
 }
 
 .btn-wrapper {
@@ -310,7 +322,7 @@ body.nav-active { overflow: hidden; }
   color: var(--white); /* Cor do texto do botão */
   padding: 12px 24px; /* Padding do botão */
   border-radius: 5px; /* Borda arredondada do botão */
-  font-size: 1.2rem; /* Tamanho da fonte do botão */
+  font-size: 1.5rem; /* Tamanho da fonte do botão */
   text-transform: uppercase; /* Texto do botão em maiúsculo */
   transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
 }
@@ -336,6 +348,7 @@ iframe {
   border-radius: 8px; /* Bordas arredondadas para o iframe */
   border: none; /* Sem borda para o iframe */
 }
+
 
 /*-----------------------------------*\
   #SERVIÇO
@@ -368,48 +381,41 @@ iframe {
 .service-card .card-title { margin-block: 16px 10px; }
 
 /* MÓDULOS E BÔNUS */
-
 .module-section .container {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adapta automaticamente o número de colunas */
-  justify-content: center; /* Centraliza os itens do grid horizontalmente */
-  gap: 20px; /* Espaçamento entre os cards */
-  margin-bottom: 50px; /* Espaçamento abaixo dos módulos */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* Esconde o conteúdo que ultrapassa o container */
 }
 
-.bonus-grid {
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* Espaçamento entre os bônus */
-  margin-top: 30px; /* Espaçamento acima dos bônus */
-}
-
-.section-title {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 50px; /* Espaçamento acima do título dos bônus */
-  margin-bottom: 30px; /* Espaçamento abaixo do título dos bônus */
+.carousel {
+  display: flex;
+  transform: translateX(0); /* Garantir que comece no início */
+  transition: transform 0.3s ease-in-out; /* Suaviza a transição do movimento */
 }
 
 .card {
+  min-width: 300px; /* Ajusta a largura mínima dos cards */
+  max-width: 300px; /* Limita a largura máxima dos cards */
+  margin: 0 10px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column; /* Organiza o conteúdo do card verticalmente */
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* As imagens cobrem completamente o espaço sem deformar */
+  width: 100%; /* Ajusta a largura da imagem para preencher o card */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: cover; /* Garante que a imagem cubra o card sem deformar */
+  border-bottom: 2px solid #ddd; /* Adiciona uma borda inferior para separação */
 }
 
 .card-content {
@@ -417,10 +423,24 @@ iframe {
   text-align: center;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+.prev-btn, .next-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* Garante que os botões estejam acima do carrossel */
+}
+
+.prev-btn {
+  left: 10px; /* Ajusta o posicionamento do botão esquerdo */
+}
+
+.next-btn {
+  right: 10px; /* Ajusta o posicionamento do botão direito */
 }
 
 
