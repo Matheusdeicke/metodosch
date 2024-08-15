@@ -380,54 +380,87 @@ iframe {
 
 .service-card .card-title { margin-block: 16px 10px; }
 
-/* MÓDULOS E BÔNUS */
+/*-----------------------------------*\
+  #MÓDULOS E BÔNUS
+\*-----------------------------------*/
 
 .module-section {
-  padding: 20px;
+  padding-block: var(--section-padding); /* Espaçamento semelhante às outras seções */
+  background-color: var(--cultured); /* Cor de fundo clara */
 }
 
-/* Wrapper do carousel que esconde o conteúdo que está fora da área visível */
+.module-section .section-title {
+  font-size: var(--fs-2); /* Tamanho de fonte consistente */
+  color: var(--charcoal); /* Cor do título */
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 40px; /* Espaçamento abaixo do título */
+}
+
 .carousel-wrapper-curso {
   position: relative;
-  overflow: hidden;
   width: 100%;
+  overflow: hidden; /* Esconde as partes fora da tela */
 }
 
-/* Configura o carousel para exibir múltiplos cards */
 .carousel-curso {
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  transform: translateX(0);
-  gap: 20px;
+  gap: 20px; /* Espaço entre os cards */
+  transition: transform var(--transition-2); /* Transição suave ao deslizar */
 }
 
-/* Define a largura de cada card para mostrar múltiplos cards por vez */
 .card__content-curso {
-  flex: 0 0 calc(33.33% - 20px); /* Cada card ocupa cerca de 1/3 da largura do container, subtraindo a margem */
-  box-sizing: border-box;        /* Inclui padding e bordas dentro da largura total do card */
+  background-color: var(--white); /* Fundo branco para os cards */
+  border-radius: var(--radius-8); /* Borda arredondada */
+  box-shadow: var(--shadow-2); /* Sombra para destaque */
+  flex-shrink: 0; /* Previne que os cards encolham */
+  width: 300px; /* Largura fixa dos cards */
+  overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse */
 }
 
-
-/* Ajusta o primeiro e o último card para evitar margens extras */
-.carousel-curso .card__content-curso:first-child {
-  margin-left: 0;
+.card__image {
+  position: relative;
+  overflow: hidden;
 }
 
-.carousel-curso .card__content-curso:last-child {
-  margin-right: 0;
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantém a proporção da imagem */
 }
 
-/* Botões de navegação */
-.prev-btn-curso, .next-btn-curso {
+.card__data {
+  padding: 20px; /* Espaçamento interno do conteúdo */
+}
+
+.card__name {
+  font-size: var(--fs-4); /* Tamanho da fonte do nome do módulo */
+  color: var(--charcoal); /* Cor do nome do módulo */
+  margin-bottom: 15px; /* Espaço abaixo do nome */
+}
+
+.card__description {
+  font-size: var(--fs-7); /* Tamanho da fonte da descrição */
+  color: var(--black-coral); /* Cor da descrição */
+  margin-bottom: 20px; /* Espaço abaixo da descrição */
+}
+
+.prev-btn-curso,
+.next-btn-curso {
   position: absolute;
-  top: 30%;
+  top: 40%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.5);
-  color: black;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--white);
   border: none;
-  padding: 10px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  z-index: 1;
+  border-radius: 50%;
+  z-index: 2;
+  
+  /* Centraliza o conteúdo */
+  align-items: center;
+  font-size: 16px; /* Certifique-se de que o tamanho da fonte está adequado para o ícone */
 }
 
 .prev-btn-curso {
@@ -438,8 +471,28 @@ iframe {
   right: 10px;
 }
 
+.prev-btn-curso:hover,
+.next-btn-curso:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 
+@media (max-width: 768px) {
+  .card__content-curso {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card__content-curso {
+    width: 100%;
+  }
+
+  .prev-btn-curso,
+  .next-btn-curso {
+    padding: 8px;
+  }
+}
 
 
 
@@ -463,8 +516,8 @@ iframe {
 
 .about-image {
   width: 350px; /* Define largura fixa */
-  height: 350px; /* Define altura fixa */
-  border-radius: 50%; /* Torna a imagem circular */
+  height: 500px; /* Define altura fixa */
+  border-radius: 8px; /* Torna a imagem circular */
   object-fit: cover; /* Garante que a imagem cubra todo o espaço */
 }
 
@@ -675,7 +728,7 @@ iframe {
 .cta { background-color: var(--charcoal); }
 
 .cta .container {
-  padding-block: 120px 60px; /* Aumento do padding superior para mais respiro */
+  padding-block: 30px 30px; /* Aumento do padding superior para mais respiro */
   border-block-end: 1px solid var(--cadet-blue-crayola_a20);
 }
 
@@ -683,30 +736,13 @@ iframe {
   color: var(--white);
   margin-block-end: 40px; /* Um pouco mais de espaço antes do botão */
 }
-
-.cta .btn {
-  background-color: var(--violet-blue-crayola);
-  color: var(--white);
-  border: none;
-  padding: 12px 20px; /* Mais padding para um botão mais chamativo */
-  font-size: 1.2rem; /* Tamanho de fonte maior para mais destaque */
-  display: inline-flex; /* Para integrar ícones facilmente */
-  align-items: center; /* Centraliza texto e ícone verticalmente */
-}
-
-.cta .btn::after {
-  content: ' ➔'; /* Adiciona uma seta como ícone depois do texto */
-  font-size: 1.4rem; /* Tamanho ligeiramente maior para o ícone */
-}
-
-
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
 
 .footer {
   background-color: var(--charcoal);
-  padding-block: 60px 100px;
+  padding-block: 20px 20px;
   color: var(--light-gray);
 }
 
