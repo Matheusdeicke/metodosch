@@ -209,7 +209,7 @@ body.nav-active { overflow: hidden; }
 .section-subtitle {
   font-size: var(--fs-7);
   text-transform: uppercase;
-  color: var(--violet-blue-crayola);
+  color: #204b9b;
   font-weight: var(--fw-700);
   margin-block-end: 16px;
 }
@@ -530,7 +530,6 @@ iframe {
 /*-----------------------------------*\
   #FEATURES
 \*-----------------------------------*/
-
 .feature .container {
   display: flex;
   flex-direction: column;
@@ -566,7 +565,8 @@ iframe {
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: var(--light-gray);
+  background-color: #204b9b;
+  color: white;
   border-radius: var(--radius-8);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   width: 90%; /* Torna os cartões ligeiramente mais estreitos que o container */
