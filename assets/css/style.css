@@ -476,6 +476,35 @@ iframe {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.btn-wrapper-modulo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza o botão */
+  align-items: center;
+  margin-top: 20px; /* Espaço acima do botão */
+  gap: 12px; /* Espaço entre os botões */
+}
+
+.btn-primary-modulo {
+  background-color: #204b9b; /* Cor de fundo do botão */
+  color: var(--white); /* Cor do texto do botão */
+  padding: 12px 24px; /* Padding do botão */
+  border-radius: 5px; /* Borda arredondada do botão */
+  font-size: 1.5rem; /* Tamanho da fonte do botão */
+  text-transform: uppercase; /* Texto do botão em maiúsculo */
+  text-align: center; /* Centraliza o texto dentro do botão */
+  transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+  text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.btn-primary-modulo:hover,
+.btn-primary-modulo:focus {
+  background-color: #043694; /* Cor de fundo do botão ao passar o mouse/focar */
+  transition: 0.5s;
+  color: var(--white); /* Cor do texto ao passar o mouse/focar */
+}
+
+
 
 @media (max-width: 768px) {
   .card__content-curso {
@@ -504,6 +533,7 @@ iframe {
   display: grid;
   gap: 50px;
   text-align: center;
+  padding-top: 50px;
 }
 
 .about .section-title {
@@ -636,6 +666,34 @@ iframe {
   object-fit: cover;  /* Assegura que as imagens cubram o espaço definido sem distorção */
 }
 
+.btn-wrapper-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza o botão */
+  align-items: center;
+  margin-top: 20px; /* Espaço acima do botão */
+  gap: 12px; /* Espaço entre os botões */
+}
+
+.btn-primary-result {
+  background-color: #204b9b; /* Cor de fundo do botão */
+  color: var(--white); /* Cor do texto do botão */
+  padding: 12px 24px; /* Padding do botão */
+  border-radius: 5px; /* Borda arredondada do botão */
+  font-size: 1.5rem; /* Tamanho da fonte do botão */
+  text-transform: uppercase; /* Texto do botão em maiúsculo */
+  text-align: center; /* Centraliza o texto dentro do botão */
+  transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+  text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.btn-primary-result:hover,
+.btn-primary-result:focus {
+  background-color: #043694; /* Cor de fundo do botão ao passar o mouse/focar */
+  transition: 0.5s;
+  color: var(--white); /* Cor do texto ao passar o mouse/focar */
+}
+
 @keyframes slide {
   from {
       transform: translateX(0);
@@ -646,75 +704,8 @@ iframe {
 }
 
 /*-----------------------------------*\
-  #CARD VENDA
+  #CARD PREÇO FINAL
 \*-----------------------------------*/
-
-.card-precos {
-  display: block;  /* Centraliza o card no bloco */
-  max-width: 300px; /* Limita a largura máxima do card */
-  margin: 0 auto; /* Centraliza horizontalmente */
-  background: var(--black-coral); /* Cor de fundo para maior legibilidade */
-  padding: 20px; /* Espaçamento interno */
-  border-radius: var(--radius-8); /* Arredondamento das bordas */
-  box-shadow: 0 8px 16px var(--raisin-black_a20); /* Sombra mais marcante */
-  transition: transform 0.3s ease-in-out; /* Transição suave para hover */
-}
-
-.card-precos:hover {
-  transform: translateY(-10px); /* Efeito flutuante ao passar o mouse */
-  box-shadow: 0 10px 20px var(--raisin-black_a30); /* Sombra mais intensa no hover */
-}
-
-.card-precos img {
-  width: 50%; /* Imagem ocupa toda a largura do card */
-  height: auto; /* Altura automática para manter proporção */
-  margin: 0 auto 15px; /* Margem automática nas laterais para centralizar, e 15px abaixo */
-  display: block;
-}
-
-.card-precos ul {
-  list-style: none; /* Remove estilos de lista */
-  padding: 0; /* Remove padding */
-  margin: 0 0 20px; /* Espaço abaixo da lista */
-}
-
-.card-precos li {
-  padding: 5px 0; /* Espaçamento entre itens */
-  border-bottom: 1px solid var(--white_a12); /* Linha sutil entre itens */
-  color: var(--charcoal); /* Cor de texto */
-}
-
-.card-precos button {
-  width: 100%; /* O botão ocupa toda a largura */
-  padding: 10px 0; /* Padding vertical */
-  background-color: var(--blue-crayola); /* Cor de fundo do botão */
-  color: var(--white); /* Cor do texto */
-  font-weight: var(--fw-700); /* Peso da fonte */
-  border-radius: var(--radius-6); /* Bordas arredondadas */
-  transition: background-color 0.25s ease; /* Transição suave da cor de fundo */
-}
-
-.card-precos button:hover {
-  background-color: var(--violet-blue-crayola); /* Cor do hover */
-}
-
-.original-price {
-  text-decoration: line-through;
-  color: red; /* Cinza para indicar o preço original não aplicado */
-  margin-right: 10px;
-}
-
-.discount-price {
-  font-weight: bold;
-  color: #4CAF50; /* Verde para destacar o preço com desconto */
-}
-
-.price {
-  font-size: 20px;
-  margin-top: 20px;
-  text-align: center; /* Centraliza o texto dos preços */
-}
-
 
 
 /*-----------------------------------*\
