@@ -367,7 +367,7 @@ iframe {
 .service-card .card-icon {
   width: 60px;
   height: 60px;
-  background-color: var(--violet-blue-crayola);
+  background-color: #204b9b;
   display: grid;
   place-items: center;
   color: var(--white);
@@ -707,6 +707,120 @@ iframe {
   #CARD PREÇO FINAL
 \*-----------------------------------*/
 
+.card-precos-final {
+  display: block;
+  max-width: 350px;
+  margin: 50px auto;
+  background-color: #666666; /* Fundo cinza escuro */
+  padding: 25px;
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Sombra */
+  text-align: center;
+  color: white; /* Cor do texto */
+}
+
+.card-precos-final img {
+  width: 100px; /* Tamanho da imagem do logo */
+  height: auto;
+  margin: 0 auto 30px;
+}
+
+.card-precos-final ul {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.card-precos-final li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0; /* Reduzido o padding para aproximar os itens verticalmente */
+  font-size: 16px;
+  border-bottom: 1px solid #333; /* Linha entre itens */
+}
+
+.card-precos-final li:last-child {
+  border-bottom: none;
+}
+
+.card-precos-final li::before {
+  content: "\2714"; /* Checkmark */
+  color: #204b9b; /* Cor azul do checkmark */
+  font-size: 18px;
+  margin-right: 8px; /* Margem mínima para aproximar o texto do checkmark */
+}
+
+.card-precos-final .price {
+  font-size: 22px;
+  margin: 20px 0; /* Reduzindo a margem superior e inferior para aproximar "De" e "Por" */
+  color: #00ff08; /* Verde para o preço */
+  font-weight: bold;
+  line-height: 1.2; /* Reduzindo o espaçamento entre as linhas */
+  text-align: center;
+}
+
+.card-precos-final .price .original-price-final {
+  text-decoration: line-through;
+  color: #ff0000; /* Vermelho para o preço original */
+  font-size: 18px;
+  margin-bottom: 0; /* Removendo a margem inferior */
+}
+
+.card-precos-final .price .discount-price-final {
+  color: #fff; /* Branco para o preço com desconto */
+  font-size: 26px;
+}
+
+.card-precos-final .price-special {
+  color: #204b9b; /* Cor azul para o texto especial */
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.card-precos-final button {
+  width: 100%;
+  padding: 15px 0;
+  background-color: #204b9b; /* Azul escuro */
+  color: #fff; /* Branco para o texto do botão */
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.card-precos-final button:hover {
+  background-color: #0547c0; /* Azul mais escuro no hover */
+  transition: 0.5s;
+}
+
+.card-precos-final .total-price {
+  font-size: 16px;
+  color: #ccc;
+  margin-top: 15px;
+  text-decoration: line-through;
+}
+
+.card-precos-final .special-condition {
+  font-size: 18px;
+  color: #ff00ff;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.card-precos-final .installments {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.card-precos-final .installments span {
+  font-size: 22px;
+  color: white;
+}
 
 /*-----------------------------------*\
   #CTA
@@ -777,6 +891,10 @@ iframe {
   color: var(--white);
   padding-inline: 24px;
   font-weight: var(--fw-700);
+}
+
+.social-link {
+  margin-top: 10px;
 }
 
 
