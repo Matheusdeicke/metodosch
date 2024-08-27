@@ -385,6 +385,14 @@ iframe {
 \*-----------------------------------*/
 
 /* Carrossel Básico */
+
+.section-title {
+  color: #204b9b;
+  position: relative;
+  top: -10px;
+}
+
+
 .module-section {
   padding-block: var(--section-padding); 
   background-color: var(--cultured); 
