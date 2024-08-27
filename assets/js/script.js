@@ -42,34 +42,47 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Carrossel modulos e bonus
 
-// MÓDULOS E BONUS
-
-const prevBtnCurso = document.querySelector('.prev-btn-curso');
-const nextBtnCurso = document.querySelector('.next-btn-curso');
-const carouselCurso = document.querySelector('.carousel-curso');
-
-let currentIndexCurso = 0;
-
-prevBtnCurso.addEventListener('click', () => {
-  if (currentIndexCurso > 0) {
-    currentIndexCurso--;
-    updateCarouselCurso();
+document.addEventListener("DOMContentLoaded", function () {
+  function duplicateCards(container) {
+      const cards = container.children;
+      const totalWidth = Array.from(cards).reduce((acc, card) => acc + card.offsetWidth + 20, 0);
+      const containerWidth = container.offsetWidth;
+      const cardsToDuplicate = Math.ceil(containerWidth / totalWidth) + 1;
+      
+      for (let i = 0; i < cardsToDuplicate; i++) {
+          Array.from(cards).forEach(card => {
+              container.appendChild(card.cloneNode(true));
+          });
+      }
   }
+
+  function startInfiniteScroll(container, speed, direction = 1) {
+      let scrollPosition = 0;
+      function scroll() {
+          scrollPosition += speed * direction;
+          if (direction === 1 && scrollPosition >= container.scrollWidth / 2) {
+              scrollPosition = 0;
+          } else if (direction === -1 && scrollPosition <= 0) {
+              scrollPosition = container.scrollWidth / 2;
+          }
+          container.style.transform = `translateX(${-scrollPosition}px)`;
+          requestAnimationFrame(scroll);
+      }
+      scroll();
+  }
+
+  const row1 = document.querySelector('.row1');
+  const row2 = document.querySelector('.row2');
+
+  duplicateCards(row1);
+  duplicateCards(row2);
+
+  startInfiniteScroll(row1, 0.3, 1); // Movimento da esquerda para direita
+  startInfiniteScroll(row2, 0.3, -1); // Movimento da direita para esquerda
 });
 
-nextBtnCurso.addEventListener('click', () => {
-  const maxIndex = carouselCurso.children.length - 3; // Atualize o número 3 se o número de itens visíveis mudar
-  if (currentIndexCurso < maxIndex) {
-    currentIndexCurso++;
-    updateCarouselCurso();
-  }
-});
-
-function updateCarouselCurso() {
-  const cardWidth = carouselCurso.children[0].offsetWidth + 20; // Inclui a margem lateral total (10px + 10px)
-  carouselCurso.style.transform = `translateX(-${currentIndexCurso * cardWidth}px)`;
-}
 
 
 
